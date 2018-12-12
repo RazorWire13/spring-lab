@@ -1,6 +1,5 @@
 package com.rw13.springlab;
 
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
