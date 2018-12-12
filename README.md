@@ -6,5 +6,5 @@
 * Create a route at /capitalize/hello that turns words into UPPER CASE.
 * Write a unit test for the capitalization functionality of that route.
 
-## 
+##
 
