@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Album Index</title>
+    <div th:replace="~{common :: head}"></div>
+</head>
+<body>
+    <h1>Album Listing</h1>
+    <ul>
+        <li th:each="album : ${albums} ">
+            <span th:text="${album.title}"></span> is an album by <span th:text="${album.artist}"></span>
+        </li>
+    </ul>
+<form action="/albums" method="POST">
+    <input placeholder="title" name="title">
+    <input placeholder="artist" name="artist">
+    <input placeholder="songcount" name="songcount">
+    <input placeholder="time" name="time">
+    <input placeholder="imageUrl" name="imageUrl">
+    <input type="submit">
+</form>
+</body>
+</html>
