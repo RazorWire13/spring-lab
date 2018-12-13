@@ -1,17 +1,11 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Hey There....you</title>
+    <title>Hey There</title>
     <div th:replace="~{common :: head}"></div>
-
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link href=" /style.css" rel="stylesheet" />
-
 </head>
 <body>
-
     <h1>Heya!</h1>
     <p th:text="'Hello, ' + ${phrase} + '!'" />
-
 </body>
 </html>
