@@ -8,6 +8,7 @@ import javax.persistence.Id;
 @Entity
 public class Album {
 
+    // Properties
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public long id;
@@ -17,6 +18,7 @@ public class Album {
     public int length;
     public String imageUrl;
 
+    // Constructors
     public Album() {}
     public Album(String title, String artist, int songCount, int length, String imageUrl) {
         this.title = title;
@@ -26,6 +28,7 @@ public class Album {
         this.imageUrl = imageUrl;
     }
 
+    // Data return as string
     public String toString() {
         return "Title: " + title + " | Artist: " + artist + " | Songcount: " + songCount + " | Length: " + length + "min | Album Image: " + imageUrl;
     }

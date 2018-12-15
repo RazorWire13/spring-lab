@@ -8,15 +8,28 @@
     <h1>Album Listing</h1>
     <ul>
         <li th:each="album : ${albums} ">
-            <span th:text="${album.title}"></span> is an album by <span th:text="${album.artist}"></span>
+
+            <!-- TODO: need proper syntax to get album imageUrl to display properly
+            <a th:href="@{'/album/' + ${album.id}}"></a>
+            <img th:src="${album.imageUrl}">
+            -->
+
+            <p>
+                <b>Title:</b> <span th:text="${album.title}"></span> <b>||</b>
+                <b>Artist:</b> <span th:text="${album.artist}"></span> <b>||</b>
+                <b>Song Count:</b> <span th:text="${album.songCount}" alt="unknown"></span> <b>||</b>
+                <b>Album Length:</b> <span th:text="${album.length}" alt="unknown"></span> min <b>||</b>
+                <b>Image URL --> </b> <span th:text="${album.imageUrl}" alt="unknown"></span>
+            </p>
         </li>
     </ul>
+    <h2>Add an Album</h2>
 <form action="/albums" method="POST">
-    <input placeholder="title" name="title">
-    <input placeholder="artist" name="artist">
-    <input placeholder="songcount" name="songcount">
-    <input placeholder="time" name="time">
-    <input placeholder="imageUrl" name="imageUrl">
+    <input placeholder="Title" name="title">
+    <input placeholder="Artist" name="artist">
+    <input placeholder="Song Count" name="songCount">
+    <input placeholder="Album Length" name="length">
+    <input placeholder="Album Image URL" name="imageUrl">
     <input type="submit">
 </form>
 </body>
