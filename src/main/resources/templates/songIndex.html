@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Song Index</title>
+    <div th:replace="~{common :: head}"></div>
+</head>
+<body>
+<h1>Song Listing</h1>
+<ul>
+    <li th:each="song : ${songs} ">
+        <span th:text="${song}"></span>
+
+        <!-- TODO: Commented out the song display in case used again -->
+
+        <!--<p>-->
+            <!--<b>Title:</b> <span th:text="${song.title}"></span> <b>||</b>-->
+            <!--<b>Track:</b> <span th:text="${song.trackNumber}" alt="unknown"></span> <b>||</b>-->
+            <!--<b>Album Length:</b> <span th:text="${song.length}" alt="unknown"></span> sec-->
+        <!--</p>-->
+
+    </li>
+</ul>
+
+<h2>Add a Song</h2>
+<form action="/songs" method="POST">
+    <input placeholder="Title" name="title" />
+    <input placeholder="Track " name="trackNumber" />
+    <input placeholder="Song Length" name="length" />
+    <input type="submit" />
+</form>
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+package com.rw13.springlab;
+
+import org.springframework.data.repository.CrudRepository;
+
+public interface SongRepository extends CrudRepository<Song, Long> {
+}
