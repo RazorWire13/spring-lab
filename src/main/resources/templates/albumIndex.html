@@ -7,30 +7,39 @@
 <body>
     <h1>Album Listing</h1>
     <ul>
-        <li th:each="album : ${albums} ">
+        <li th:each="album : ${albums}">
+            <span th:text="${album}"></span>
+            <form method="POST" th:action="${'/albums/' + album.id + '/songs'}">
+            <input placeholder="Song Title" name="title" />
+            <input placeholder="Track " name="trackNumber" />
+            <input placeholder="Song Length" name="length" />
+            <input type="submit" />
+            </form>
 
             <!-- TODO: need proper syntax to get album imageUrl to display properly
             <a th:href="@{'/album/' + ${album.id}}"></a>
             <img th:src="${album.imageUrl}">
             -->
 
-            <p>
-                <b>Title:</b> <span th:text="${album.title}"></span> <b>||</b>
-                <b>Artist:</b> <span th:text="${album.artist}"></span> <b>||</b>
-                <b>Song Count:</b> <span th:text="${album.songCount}" alt="unknown"></span> <b>||</b>
-                <b>Album Length:</b> <span th:text="${album.length}" alt="unknown"></span> min <b>||</b>
-                <b>Image URL --> </b> <span th:text="${album.imageUrl}" alt="unknown"></span>
-            </p>
+            <!-- TODO: Commented out the album display in case used again -->
+            <!--<p>-->
+                <!--<b>Title:</b> <span th:text="${album.title}"></span> <b>||</b>-->
+                <!--<b>Artist:</b> <span th:text="${album.artist}"></span> <b>||</b>-->
+                <!--<b>Song Count:</b> <span th:text="${album.songCount}"></span> <b>||</b>-->
+                <!--<b>Album Length:</b> <span th:text="${album.length}"></span> min <b>||</b>-->
+                <!--<b>Image URL &ndash;&gt; </b> <span th:text="${album.imageUrl}"></span>-->
+            <!--</p>-->
+
         </li>
     </ul>
     <h2>Add an Album</h2>
 <form action="/albums" method="POST">
-    <input placeholder="Title" name="title">
-    <input placeholder="Artist" name="artist">
-    <input placeholder="Song Count" name="songCount">
-    <input placeholder="Album Length" name="length">
-    <input placeholder="Album Image URL" name="imageUrl">
-    <input type="submit">
+    <input placeholder="Title" name="title" />
+    <input placeholder="Artist" name="artist" />
+    <input placeholder="Song Count" name="songCount" />
+    <input placeholder="Album Length" name="length" />
+    <input placeholder="Album Image URL" name="imageUrl" />
+    <input type="submit" />
 </form>
 </body>
 </html>
