@@ -51,4 +51,13 @@ public class AlbumController {
         songRepo.save(newSong);
         return new RedirectView("/albums");
     }
+
+    // Display album info with songs on screen
+    @RequestMapping(value="/display-album/{albumId}", method=RequestMethod.GET)
+    public String displayAlbum(@PathVariable long albumId,
+                               Model model) {
+        model.addAttribute("album", albumRepo.findById(albumId).get());
+        return "displayIndex";
+    }
 }
+
