@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Display Index</title>
+    <div th:replace="~{common :: head}"></div>
+</head>
+<body>
+<h1>Display Albums with Songs</h1>
+<h2><span th:text="${album.title}"></span></h2>
+<ul>
+    <li th:each="song : ${album.songs}">
+        <span th:text="${song}"></span>
+
+    </li>
+</ul>
+</body>
+</html>

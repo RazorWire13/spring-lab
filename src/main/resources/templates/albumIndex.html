@@ -8,7 +8,7 @@
     <h1>Album Listing</h1>
     <ul>
         <li th:each="album : ${albums}">
-            <span th:text="${album}"></span>
+            <a th:href="${'/display-album/' + album.id}"><span th:text="${album}"></span></a>
             <form method="POST" th:action="${'/albums/' + album.id + '/songs'}">
             <input placeholder="Song Title" name="title" />
             <input placeholder="Track " name="trackNumber" />
@@ -18,8 +18,7 @@
 
             <!-- TODO: need proper syntax to get album imageUrl to display properly
             <a th:href="@{'/album/' + ${album.id}}"></a>
-            <img th:src="${album.imageUrl}">
-            -->
+            <img th:src="@{${album.imageUrl}}">  -->
 
             <!-- TODO: Commented out the album display in case used again -->
             <!--<p>-->
